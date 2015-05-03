@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
-
+import com.android.volley.Request.Method;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final String url = "http://3dkinobitola.com/?json=get_category_posts&slug=Repertoar&status=publish";
+    private static final String URL = "http://3dkinobitola.com/?json=get_category_posts&slug=Repertoar&status=publish";
     ListView listView;
     KinoAdapter adapter;
     
@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
 
         listView.setAdapter(adapter);
 
-        StringRequest movieReq = new StringRequest(url,
+        StringRequest movieReq = new StringRequest(Method.GET,URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
