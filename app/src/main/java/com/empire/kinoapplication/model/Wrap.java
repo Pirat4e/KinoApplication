@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 
 public class Wrap {
-    private ArrayList<Post> postArrayList;
+   private ArrayList<Post> posts;
 
-    public ArrayList<Post> getPostArrayList() {
-        return postArrayList;
+    public ArrayList<Post> getPosts() {
+        return posts;
     }
 
-    public void setPostArrayList(ArrayList<Post> postArrayList) {
-        this.postArrayList = postArrayList;
+    public void setPosts(ArrayList<Post> posts) {
+        this.posts = posts;
     }
 }
