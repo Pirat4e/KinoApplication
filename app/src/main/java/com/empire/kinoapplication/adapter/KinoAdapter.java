@@ -25,10 +25,6 @@ public KinoAdapter(Context context, int resource) {
     
 }
 
-    static class ViewHolder {
-        public TextView text;
-        public ImageView image;
-    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -36,7 +32,7 @@ public KinoAdapter(Context context, int resource) {
         View rowView = convertView;
         if (rowView == null) {
             rowView = LayoutInflater.from(context).inflate(R.layout.list_item_view, null);
-            viewHolder = new ViewHolder();
+            viewHolder = new ViewHolder(convertView);
             viewHolder.image = (ImageView) rowView.findViewById(R.id.img_poster);
             viewHolder.text = (TextView) rowView.findViewById(R.id.txt_tittle);
             rowView.setTag(viewHolder);
