@@ -1,10 +1,10 @@
 package com.empire.kinoapplication.model;
 
 
-public class Attachments {
+public class Attachment {
     private String url;
 
-    public Attachments(String url) {
+    public Attachment(String url) {
         this.url = url;
     }
 
