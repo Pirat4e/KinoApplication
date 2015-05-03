@@ -32,7 +32,7 @@ public KinoAdapter(Context context, int resource) {
         View rowView = convertView;
         if (rowView == null) {
             rowView = LayoutInflater.from(context).inflate(R.layout.list_item_view, null);
-            viewHolder = new ViewHolder(convertView);
+            viewHolder = new ViewHolder(rowView);
             viewHolder.image = (ImageView) rowView.findViewById(R.id.img_poster);
             viewHolder.text = (TextView) rowView.findViewById(R.id.txt_tittle);
             rowView.setTag(viewHolder);
