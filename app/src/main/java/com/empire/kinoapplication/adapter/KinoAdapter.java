@@ -20,10 +20,10 @@ import java.util.List;
 public class KinoAdapter extends ArrayAdapter<Post> {
     Context context;
 
-    public KinoAdapter(Context context, int resource, List<Post> posts) {
-        super(context, resource, posts);
-
-    }
+public KinoAdapter(Context context, int resource) {
+    super(context, resource);
+    
+}
 
     static class ViewHolder {
         public TextView text;
