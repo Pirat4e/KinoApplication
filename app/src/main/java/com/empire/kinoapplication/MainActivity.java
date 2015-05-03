@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
     private static final String url = "http://example.com/?json=get_category_posts&slug=Repertoar&status=publish";
     ListView listView;
     KinoAdapter adapter;
-    private Activity mActivity;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
 
         listView = (ListView) mActivity.findViewById(android.R.id.list);
 
-        adapter = new KinoAdapter(mActivity, R.layout.list_item_view);
+        adapter = new KinoAdapter(this, R.layout.list_item_view);
 
         listView.setAdapter(adapter);
 
