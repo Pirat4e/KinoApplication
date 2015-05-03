@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
 
         listView = (ListView) mActivity.findViewById(android.R.id.list);
 
-        adapter = new KinoAdapter(mActivity, R.layout.activity_main, arrayList);
+        adapter = new KinoAdapter(mActivity, R.layout.list_item_view);
 
         listView.setAdapter(adapter);
 
