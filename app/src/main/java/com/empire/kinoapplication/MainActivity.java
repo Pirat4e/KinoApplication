@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
                         Log.d(TAG, response.toString());
 
                         Wrap wrap = new Gson().fromJson(response, Wrap.class);
-                            for(Post post : wrap.getPostArrayList()){
+                            for(Post post : wrap.getPosts()){
                                 adapter.addAll(post);
                             }
                     }
