@@ -46,7 +46,10 @@ public class MainActivity extends ActionBarActivity {
                         Log.d(TAG, response.toString());
 
                         Wrap wrap = new Gson().fromJson(response, Wrap.class);
-                        arrayList.add(wrap);
+                       
+                        String titleOfFirstPost = wrap.getPostArrayList().get(0).getTitle();
+                        String contentofFirstPost = wrap.getPostArrayList().get(0).getContent();
+                        String imageofFirstPost = wrap.getPostArrayList().get(0).getAttachments().get(0).getUrl();
                     }
 
                 }, new Response.ErrorListener() {
