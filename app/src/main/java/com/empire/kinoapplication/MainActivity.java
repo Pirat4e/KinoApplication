@@ -25,7 +25,6 @@ public class MainActivity extends ActionBarActivity {
     private static final String url = "http://example.com/?json=get_category_posts&slug=Repertoar&status=publish";
     ListView listView;
     KinoAdapter adapter;
-    ArrayList<Post> arrayList;
     private Activity mActivity;
 
     @Override
@@ -46,10 +45,9 @@ public class MainActivity extends ActionBarActivity {
                         Log.d(TAG, response.toString());
 
                         Wrap wrap = new Gson().fromJson(response, Wrap.class);
-                       
-                        String titleOfFirstPost = wrap.getPostArrayList().get(0).getTitle();
-                        String contentofFirstPost = wrap.getPostArrayList().get(0).getContent();
-                        String imageofFirstPost = wrap.getPostArrayList().get(0).getAttachments().get(0).getUrl();
+                            for(Post post : wrap.getPostArrayList()){
+                                adapter.addAll(post);
+                            }
                     }
 
                 }, new Response.ErrorListener() {
@@ -58,8 +56,6 @@ public class MainActivity extends ActionBarActivity {
                 VolleyLog.d(TAG, "Error: " + error.getMessage());
             }
         });
-
-        adapter.notifyDataSetChanged();
         AppController.getInstance().addToRequestQueue(movieReq);
 
     }
