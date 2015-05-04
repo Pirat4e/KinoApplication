@@ -18,7 +18,7 @@ import java.util.List;
 
 
 public class KinoAdapter extends ArrayAdapter<Post> {
-    Context context;
+   
 
 public KinoAdapter(Context context, int resource) {
     super(context, resource);
@@ -29,15 +29,13 @@ public KinoAdapter(Context context, int resource) {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
-        View rowView = convertView;
-        if (rowView == null) {
-            rowView = LayoutInflater.from(context).inflate(R.layout.list_item_view, null);
-            viewHolder = new ViewHolder(rowView);
-            viewHolder.image = (ImageView) rowView.findViewById(R.id.img_poster);
-            viewHolder.text = (TextView) rowView.findViewById(R.id.txt_tittle);
-            rowView.setTag(viewHolder);
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_view, null);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
         } else {
-            viewHolder = (ViewHolder) rowView.getTag();
+            viewHolder = (ViewHolder) convertView.getTag();
         }
         final Post p = getItem(position);
         viewHolder.text.setText(p.getTitle());
@@ -48,7 +46,7 @@ public KinoAdapter(Context context, int resource) {
                 .resize(900, 350)
                 .into(viewHolder.image);
 
-        rowView.setOnClickListener(new View.OnClickListener() {
+        convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NewActivity.class);
@@ -57,7 +55,7 @@ public KinoAdapter(Context context, int resource) {
                 context.startActivity(intent);
             }
         });
-        return rowView;
+        return convertView;
     }
 
 }
