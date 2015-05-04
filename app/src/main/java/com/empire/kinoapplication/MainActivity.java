@@ -46,8 +46,7 @@ public class MainActivity extends ActionBarActivity {
 
                         Wrap wrap = new Gson().fromJson(response, Wrap.class);
                           for(Post post : wrap.getPosts()){
-                              ArrayList<Post> arrayList = new ArrayList<>();
-                              arrayList.add(post);
+                              adapter.add(post);
                         }
 
                         adapter.notifyDataSetChanged();
