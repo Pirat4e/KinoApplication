@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
     private static final String URL = "http://3dkinobitola.com/?json=get_category_posts&slug=Repertoar&status=publish";
     ListView listView;
     KinoAdapter adapter;
-    ArrayList arrayList;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
