@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
     private static final String URL = "http://3dkinobitola.com/?json=get_category_posts&slug=Repertoar&status=publish";
     ListView listView;
     KinoAdapter adapter;
-    ArrayList<Post> arrayList;
+    ArrayList arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,8 @@ public class MainActivity extends ActionBarActivity {
 
                         Wrap wrap = new Gson().fromJson(response, Wrap.class);
                           for(Post post : wrap.getPosts()){
-                            arrayList.add(post);
+                              arrayList = new ArrayList();
+                              arrayList.add(post);
                         }
 
                         adapter.notifyDataSetChanged();
