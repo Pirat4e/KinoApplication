@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final String URL = "http://3dkinobitola.com/?json=get_category_posts&slug=Repertoar&status=publish";
+    private static final String URL = "http://example.com/?json=get_category_posts&slug=Repertoar&status=publish";
     ListView listView;
     KinoAdapter adapter;
     
